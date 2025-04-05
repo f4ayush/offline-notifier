@@ -44,14 +44,19 @@ const OfflineNotifier: React.FC<OfflineNotifierProps> = ({
     <div
       style={{
         position: "fixed",
-        top: "10px",
-        right: "10px",
+        top: "0",
+        right: "0",
+        bottom: "0",
+        left: "0",
         opacity: 0.5,
         color,
         backgroundColor,
         padding: "5px 10px",
         borderRadius: "3px",
-        fontSize: "12px",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        zIndex:"9999"
       }}
     >
       {icon} {text}
