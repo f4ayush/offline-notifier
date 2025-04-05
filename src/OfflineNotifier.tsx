@@ -56,10 +56,12 @@ const OfflineNotifier: React.FC<OfflineNotifierProps> = ({
         display:"flex",
         justifyContent:"center",
         alignItems:"center",
-        zIndex:"9999"
+        zIndex:"9999",
+        flexDirection:"column"
       }}
     >
-      {icon} {text}
+      <span>{icon}</span> 
+      <span>{text}</span>
     </div>
   );
 };
