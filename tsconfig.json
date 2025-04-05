@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "jsx": "react-jsx",
+    "target": "es6",
+    "lib": ["dom", "es2015"],
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
     "declaration": true,
-    "declarationMap": true,
-    "moduleResolution": "Node",
-    "outDir": "dist",
-    "strict": true
+    "declarationDir": "./dist/types",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true
+
   },
-  "include": ["src"]
+  "include": ["src", "node_modules"],
+  // "exclude": ["node_modules"]
+
 }

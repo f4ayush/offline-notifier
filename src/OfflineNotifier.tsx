@@ -1,4 +1,6 @@
+import React from "react";
 import { useEffect, useState } from "react";
+import useConnectivityStatus from "./useConnectivityStatus";
 
 interface OfflineNotifierProps {
   mode?: "toast" | "watermark"; // Select toast or watermark
@@ -15,20 +17,7 @@ const OfflineNotifier: React.FC<OfflineNotifierProps> = ({
   backgroundColor = "red",
   icon,
 }) => {
-  const [isOffline, setIsOffline] = useState(!navigator.onLine);
-
-  useEffect(() => {
-    const handleOffline = () => setIsOffline(true);
-    const handleOnline = () => setIsOffline(false);
-
-    window.addEventListener("offline", handleOffline);
-    window.addEventListener("online", handleOnline);
-
-    return () => {
-      window.removeEventListener("offline", handleOffline);
-      window.removeEventListener("online", handleOnline);
-    };
-  }, []);
+  const {isOffline, connectionType} = useConnectivityStatus()
 
   if (!isOffline) return null;
 
